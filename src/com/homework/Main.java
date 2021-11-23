@@ -22,13 +22,25 @@ public class Main {
 
         string.clear();
         System.out.println("Видалено MyArraylist <String>, методом \"clear()\".");
-        System.out.println("Перевірка  MyArraylist <String>, методом \"isEmpty()\": " + string.isEmpty());
-        System.out.println("Розмір MyArraylist <Integer>: " + integer.size());
+        System.out.println("Перевірка  MyArraylist <String>, методом \"isEmpty()\": " + string.isEmpty() + "\n");
+        System.out.println("Розмір MyArraylist <Integer>, метод \"size()\": " + integer.size());
         System.out.print("Метод \"integer.get(1)\": ");
         integer.get(1);
         System.out.print("Метод \"integer.set(1, 555)\"");
         integer.set(1, 555);
         System.out.print("\nМетод \"integer.get(1)\": ");
         integer.get(1);
+        System.out.println("\nMyArraylist <Integer> до метода \"remove(2)\":\n" + integer);
+        integer.remove(2);
+        System.out.println("\nMyArraylist <Integer> після методу \"remove(2)\":\n" + integer);
+        System.out.println();
+
+        System.out.println("Перевірка методів, на некоректний індекс:\n");
+        System.out.println("integer.get(-1):");
+        integer.get(-1);
+        System.out.println("\ninteger.set(55, 3):");
+        integer.set(55, 3);
+        System.out.println("\ninteger.remove(22);");
+        integer.remove(22);
     }
 }

@@ -34,9 +34,23 @@ public class MyArrayList<E> implements List<E> {
     }
 
     @Override
+    public void remove(int index) {
+        if (index >= 0 && index < elementData.length) {
+            Object[] newElementData = new Object[elementData.length - 1];
+            int remainingElements = elementData.length - (index + 1);
+            System.arraycopy(elementData, 0, newElementData, 0, index);
+            System.arraycopy(elementData, index + 1, newElementData, index, remainingElements);
+            this.elementData = newElementData;
+            counter--;
+        } else {
+            System.out.println("Помилка, невірний індекс");
+        }
+    }
+
+    @Override
     public void set(int index, E element) {
         if (index >= 0 && index < elementData.length) {
-            elementData[index] = element;
+            this.elementData[index] = element;
         } else {
             System.out.println("Помилка, невірний індекс");
         }
